@@ -1,0 +1,159 @@
+@media only screen and (max-width: 991px) {
+    .about__block,
+    .footer__block {
+        color: #222;
+        padding-bottom: 60px;
+        padding-top: 60px;
+    }
+
+    .about {
+        &__wrapper {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        &__title {
+            line-height: 60px;
+            margin-bottom: 30px;
+        }
+    }
+
+    .skills__block {
+        max-width: 375px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .header {
+        &__main_text-question {
+            font-size: 48px;
+            margin-bottom: 30px;
+        }
+
+        &__navigation {
+            margin-bottom: 150px;
+            position: relative;
+        }
+
+        &__main_block {
+            height: auto;
+            padding-top: 0;
+        }
+    }
+
+    .navigation {
+        &__block {
+            position: absolute;
+            right: 0;
+            top: 80px;
+            text-align: right;
+        }
+
+        &__item {
+            margin-right: 0;
+        }
+
+        &__item {
+            text-align: right;
+            margin-right: 15px !important;
+        }
+    }
+
+    .about {
+        &__text_block-brand {
+            padding-left: 15px;
+        }
+
+        &__text {
+            text-align: justify;
+        }
+
+        &__text:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+
+    .about__link-dev:before,
+    .about__link-dev:after,
+    .about__link-brand:before,
+    .about__link-brand:after {
+        left: 0;
+        margin: 0 auto;
+        right: 0;
+        top: 20px;
+    }
+
+    .skills {
+        &__row:not(:last-child) {
+            margin-bottom: 0;
+        }
+
+        &__block {
+            margin-bottom: 20px;
+            max-width: 570px;
+        }
+    }
+
+    .footer {
+        &__text {
+            text-align: justify;
+        }
+    }
+
+    .form__block,
+    .form {
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .header__main_text-question {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+
+    .header__main_text-answer {
+        font-size: 30px;
+    }
+
+    .about {
+        &__link-dev,
+        &__link-brand {
+            display: none;
+        }
+        &__title {
+            font-size: 30px;
+            line-height: 36px;
+            margin-bottom: 20px;
+        }
+    }
+
+    .about__block,
+    .footer__block {
+        padding-bottom: 30px;
+        padding-top: 30px;
+    }
+
+
+
+    .footer {
+        &__title {
+            font-size: 30px;
+            line-height: 36px;
+            margin-bottom: 20px;
+        }
+
+        &__contacts {
+            margin-bottom: 15px;
+        }
+
+        &__copyright_text {
+            text-align: center;
+        }
+    }
+
+    .form__input_block {
+        margin-bottom: 15px;
+    }
+
+}
