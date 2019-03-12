@@ -15,6 +15,10 @@
         &__title {
             line-height: 60px;
             margin-bottom: 30px;
+
+            &-link {
+                line-height: 75px;
+            }
         }
     }
 
@@ -127,6 +131,10 @@
             font-size: 30px;
             line-height: 36px;
             margin-bottom: 20px;
+
+            &-link {
+                line-height: inherit;
+            }
         }
     }
 

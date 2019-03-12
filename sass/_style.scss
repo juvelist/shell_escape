@@ -41,7 +41,7 @@
 
 ::-webkit-scrollbar-thumb {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
-    background-color: $colorBlue;
+    background-color: $colorLightGrey;
 }
 
 ::-webkit-scrollbar-track {
@@ -269,7 +269,7 @@ strong.italic {
     }
 
     &__text {
-        color: $colorLightGrey;
+        color: $colorDarkGrey;
         font-size: 14px;
         line-height: 24px;
 
@@ -360,6 +360,10 @@ strong.italic {
         margin-bottom: 5px;
         @include transition-mixin(color);
 
+        &:hover {
+            color: $colorGrey;
+        }
+
         &:before,
         &:after {
             height: 72px;
@@ -444,7 +448,7 @@ strong.italic {
     }
 
     &__text {
-        color: $colorLightGrey;
+        color: $colorDarkGrey;
         font-size: 14px;
         line-height: 21px;
     }
@@ -466,7 +470,7 @@ strong.italic {
             background-color: #50325F;
         }
         100% {
-            background-color: #bbb;
+            background-color: $colorLightGrey;
         }
     }
     @keyframes color-change-2x {
@@ -477,7 +481,7 @@ strong.italic {
             background-color: #50325F;
         }
         100% {
-            background-color: #bbb;
+            background-color: $colorLightGrey;
         }
     }
 
@@ -501,10 +505,10 @@ strong.italic {
             color: $colorLight;
             font-family: 'opensans-semibold', sans-serif;
             @include transition-mixin();
-        }
 
-        &-link:hover {
-            color: $colorLight;
+            &:hover {
+                color: $colorLight;
+            }
         }
     }
 
@@ -673,7 +677,7 @@ strong.italic {
     }
 
     &__text {
-        color: #bbb;
+        color: $colorLightGrey;
         font-size: 16px;
         left: 20px;
         position: absolute;

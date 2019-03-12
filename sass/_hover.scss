@@ -32,15 +32,12 @@
 
     .about__title {
         &-link:hover {
+            color: $colorLight;
             animation: shake-right .8s ease-in-out both;
         }
     }
 
     .skills {
-        &__title:hover {
-            color: $colorGrey;
-        }
-
         &__title:hover:before,
         &__title:hover:after {
             animation: shake-down 1s ease-in-out both;
@@ -117,9 +114,14 @@
     }
 
     .footer {
-        &__contacts:hover {
-            color: $colorDark;
+        &__contacts {
+
+            &:hover,
+            &_info:hover {
+                color: $colorDark;
+            }
         }
+
 
         &__contacts:hover.footer__contacts {
             &-tel {
