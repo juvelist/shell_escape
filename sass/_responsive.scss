@@ -28,6 +28,7 @@
         &__main_text-question {
             font-size: 48px;
             margin-bottom: 30px;
+            min-height: 70px;
         }
 
         &__navigation {
@@ -110,6 +111,7 @@
     .header__main_text-question {
         font-size: 40px;
         margin-bottom: 20px;
+        min-height: 60px;
     }
 
     .header__main_text-answer {

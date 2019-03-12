@@ -121,6 +121,7 @@ strong.italic {
         &-question {
             font: 66px 'opensans-bold', sans-seif;
             margin-bottom: 60px;
+            min-height: 95px;
         }
     }
 
@@ -135,10 +136,35 @@ strong.italic {
         min-width: 240px;
         @include transition-mixin();
 
+        position: relative;
+        transform-style: preserve-3d;
+
+        &:after {
+            background-color: transparent;
+            border: 2px solid $colorLight;
+            border-radius: 4px;
+            color: $colorLight;
+            content: attr(data-text);
+            font: 20px 'opensans-semibold', sans-seif;
+            height: 65px;
+            left: -2px;
+            line-height: 61px;
+            min-width: 240px;
+            position: absolute;
+            top: -100%;
+            transform-origin: left bottom;
+            transform: rotateX(90deg);
+            width: 100%;
+        }
+
         &:hover,
         &:active {
-            background-color: $colorLight;
-            color: $colorDark;
+            transform-origin: center bottom;
+            transform: rotateX(-90deg) translateY(100%);
+        }
+
+        &:focus {
+            outline: none;
         }
     }
 }
@@ -159,11 +185,30 @@ strong.italic {
     &__link {
         color: $colorLight;
         text-decoration: none;
-        @include transition-mixin(color);
+        position: relative;
+        @include transition-mixin();
 
         &:hover {
-            color: $colorBlue;
+            color: $colorLight;
             text-decoration: none;
+        }
+
+        &:after {
+            background-color: $colorLight;
+            bottom: 0;
+            content: "";
+            display: inline-block;
+            height: 1px;
+            left: 0;
+            position: absolute;
+            transform: scale(0);
+            width: 100%;
+            @include transition-mixin();
+        }
+
+        &:hover:after,
+        &.active:after {
+            transform: scale(1);
         }
     }
 }
@@ -193,17 +238,33 @@ strong.italic {
 
     &__title {
         font: 60px 'opensans-light', sans-seif;
-        line-height: 40px;
-        margin-bottom: 50px;
+        margin-bottom: 35px;
 
-        &-bold {
+        &-link {
             color: $colorDark;
-            font-family: 'opensans-semibold', sans-seif;
-            @include transition-mixin(color);
+            font-family: 'opensans-semibold', sans-serif;
+            @include transition-mixin();
         }
 
-        &-bold:hover {
+        &-link:hover {
+            color: $colorDark;
+        }
+
+        &-link:before {
             color: $colorGrey;
+            content: attr(data-label);
+            display: inline-block;
+            left: 0;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            transition: width .4s linear;
+            white-space: nowrap;
+            width: 0;
+        }
+
+        &-link:hover:before {
+            width: 100%;
         }
     }
 
@@ -393,11 +454,35 @@ strong.italic {
 
 .footer {
     &__block_out {
-        background-color: $colorBlue;
+        -webkit-animation: color-change-2x 10s linear infinite alternate both;
+        animation: color-change-2x 10s linear infinite alternate both;
+    }
+
+    @-webkit-keyframes color-change-2x {
+        0% {
+            background-color: $colorBlue;
+        }
+        50%{
+            background-color: #50325F;
+        }
+        100% {
+            background-color: #bbb;
+        }
+    }
+    @keyframes color-change-2x {
+        0% {
+            background-color: $colorBlue;
+        }
+        50%{
+            background-color: #50325F;
+        }
+        100% {
+            background-color: #bbb;
+        }
     }
 
     &__block {
-        border-bottom: 1px solid #87a0d2;
+        border-bottom: 1px solid $colorLight;
         color: $colorDark;
         padding-bottom: 90px;
         padding-top: 100px;
@@ -409,18 +494,17 @@ strong.italic {
     }
 
     &__title {
-        font: 60px 'opensans-light', sans-seif;
-        line-height: 45px;
-        margin-bottom: 33px;
+        font: 60px 'opensans-light', sans-serif;
+        margin-bottom: 20px;
 
-        &-bold {
+        &-link {
             color: $colorLight;
-            font-family: 'opensans-semibold', sans-seif;
-            @include transition-mixin(color);
+            font-family: 'opensans-semibold', sans-serif;
+            @include transition-mixin();
         }
 
-        &-bold:hover {
-            color: $colorDark;
+        &-link:hover {
+            color: $colorLight;
         }
     }
 
@@ -439,6 +523,16 @@ strong.italic {
         padding-left: 40px;
         position: relative;
         @include transition-mixin(color);
+
+        &_info:hover {
+            color: $colorDark;
+        }
+
+        &_info {
+            font-family: 'opensans-semibold', sans-serif;
+            color: $colorLight;
+            @include transition-mixin();
+        }
 
         &:before,
         &:after {
@@ -531,7 +625,6 @@ strong.italic {
             font-size: 12px;
         }
     }
-
 }
 
     /* Form */
@@ -566,6 +659,7 @@ strong.italic {
         outline: none;
         padding: 15px 20px;
         width: 100%;
+        @include transition-mixin();
     }
 
     &__input {
