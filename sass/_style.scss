@@ -89,6 +89,7 @@ strong.italic {
 .header {
     &__block {
         background: center top no-repeat url("../img/banner.jpg");
+        background-size: cover;
         height: 620px;
         width: 100%;
     }
@@ -187,6 +188,10 @@ strong.italic {
         text-decoration: none;
         position: relative;
         @include transition-mixin();
+
+        &.active {
+            cursor: default;
+        }
 
         &:hover {
             color: $colorLight;
