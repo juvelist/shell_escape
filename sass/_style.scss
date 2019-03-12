@@ -524,10 +524,6 @@ strong.italic {
         position: relative;
         @include transition-mixin(color);
 
-        &_info:hover {
-            color: $colorDark;
-        }
-
         &_info {
             font-family: 'opensans-semibold', sans-serif;
             color: $colorLight;
