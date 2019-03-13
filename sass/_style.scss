@@ -460,34 +460,21 @@ strong.italic {
 }
 
 /*** FOOTER ***/
+@include keyframes(color-change-2x) {
+    0% {
+        background-color: $colorBlue;
+    }
+    50%{
+        background-color: #50325F;
+    }
+    100% {
+        background-color: $colorLightGrey;
+    }
+}
 
 .footer {
     &__block_out {
-        -webkit-animation: color-change-2x 10s linear infinite alternate both;
-        animation: color-change-2x 10s linear infinite alternate both;
-    }
-
-    @-webkit-keyframes color-change-2x {
-        0% {
-            background-color: $colorBlue;
-        }
-        50%{
-            background-color: #50325F;
-        }
-        100% {
-            background-color: $colorLightGrey;
-        }
-    }
-    @keyframes color-change-2x {
-        0% {
-            background-color: $colorBlue;
-        }
-        50%{
-            background-color: #50325F;
-        }
-        100% {
-            background-color: $colorLightGrey;
-        }
+        @include animation(color-change-2x, 10s, linear, 0s, infinite, alternate, both);
     }
 
     &__block {

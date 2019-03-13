@@ -15,14 +15,6 @@
   @include css3-prefix('transition', $style $duration $type $delay);
 }
 
-
-/*
-@include select-none($selcet: all);
-@include transition-mixin($type: ease-in-out);
-*/
-
-
-
 @mixin bgi($name) {
   background-image: url('../img/' + $name);
   background-repeat: no-repeat;
@@ -87,6 +79,8 @@
   text-shadow: $x $y $blur $color;
 }
 
+
+
 @mixin keyframes($animation-name) {
   @-webkit-keyframes #{$animation-name} {
     @content;
@@ -105,6 +99,9 @@
   }
 }
 
-@mixin animation($name: animate, $duration: .4s, $type: ease, $fill: none, $delay : 0s) {
-  @include css3-prefix('animation', $name $duration $type $fill $delay);
+@mixin animation($name: animate, $duration: .4s, $type: ease, $delay : 0s, $count: 2, $direction: normal, $fill: none) {
+  @include css3-prefix('animation', $name $duration $type $delay $count $direction $fill);
 }
+
+
+
